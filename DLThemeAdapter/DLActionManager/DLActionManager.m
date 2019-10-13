@@ -55,16 +55,14 @@
     NSMapTable *objectInfoMaps = [_objectInfosMap copy];
     pthread_mutex_unlock(&_mutex);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        for (id object in objectInfoMaps) {
-            NSMutableSet *infos = [objectInfoMaps objectForKey:object];
-            [infos enumerateObjectsUsingBlock:^(DLActionInfo *info, BOOL *stop) {
-                if (info.actionManagerBlock) {
-                    info.actionManagerBlock(notification.userInfo);
-                }
-            }];
-        }
-    });
+    for (id object in objectInfoMaps) {
+        NSMutableSet *infos = [objectInfoMaps objectForKey:object];
+        [infos enumerateObjectsUsingBlock:^(DLActionInfo *info, BOOL *stop) {
+            if (info.actionManagerBlock) {
+                info.actionManagerBlock(notification.userInfo);
+            }
+        }];
+    }
     
 }
 

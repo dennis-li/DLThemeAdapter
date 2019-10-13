@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void) dl_setThemes:(NSArray *) themes forKeyPath:(NSString *) keyPath;
 
+#warning 请注意selector返回值为对象时，可能出现内存泄露
 - (void)dl_setThemes:(NSArray *)themes forSelector:(SEL)selector;
 
 //value是第二个参数(忽略self，_cmd) 比如UIButton的@selector(setTitleColor:forState:)中的state参数
 - (void)dl_setThemes:(NSArray *)themes forSelector:(SEL)selector withValue:(NSInteger) value;
 
-#warning 请注意selector返回值为对象时，可能出现内存泄露
 - (void)dl_setThemes:(NSArray *)themes forSelector:(SEL)selector withObject:(id)object;
 
 @end
