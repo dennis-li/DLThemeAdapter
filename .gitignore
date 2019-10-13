@@ -1,0 +1,33 @@
+*.DS_Store
+Podfile.lock
+Pods/
+
+*~
+*.DS_Store
+*xcuserdata*
+*gitconfig
+*.diff
+build/*
+product/*
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate
+
+## Build generated
+Products/
+build/
+DerivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
