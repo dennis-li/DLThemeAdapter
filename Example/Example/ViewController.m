@@ -26,8 +26,13 @@
 
 - (void) setup
 {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 45, 70, 30)];
+    [self.view addSubview:label];
+    label.font = [UIFont systemFontOfSize:13];
+    label.text = @"点击数字";
+    
     for (NSInteger i = 0; i < 7; i++) {
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(20+i*40, 50, 20, 20)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(80+i*40, 50, 20, 20)];
         button.tag = i;
         [button setTitle:[NSString stringWithFormat:@"%@",@(i)] forState:UIControlStateNormal];
         [button setBackgroundColor:[UIColor orangeColor]];
@@ -61,7 +66,7 @@
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(150, 100, 120, 30)];
     
     //设置普通标题
-    NSArray *normalTitles = @[@"普通0",@"普通1",@"普通2",@"普通3",@"普通4",@"普通5",@"普通6"];
+    NSArray *normalTitles = @[@"戳我试试0",@"戳我试试1",@"戳我试试2",@"戳我试试3",@"戳我试试4",@"戳我试试5",@"戳我试试6"];
     [button dl_setThemes:normalTitles forSelector:@selector(setTitle:forState:) withValue:UIControlStateNormal];
     
     //设置普通标题的颜色
@@ -69,7 +74,7 @@
     [button dl_setThemes:normalColors forSelector:@selector(setTitleColor:forState:) withValue:UIControlStateNormal];
     
     //设置选中按钮的标题
-    NSArray *selectedTitles = @[@"选中0",@"选中1",@"选中2",@"选中3",@"选中4",@"选中5",@"选中6"];
+    NSArray *selectedTitles = @[@"戳我0",@"戳我1",@"戳我2",@"戳我3",@"戳我4",@"戳我5",@"戳我6"];
     [button dl_setThemes:selectedTitles forSelector:@selector(setTitle:forState:) withValue:UIControlStateSelected];
     
     //设置选中按钮的标题的颜色
